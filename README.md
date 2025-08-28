@@ -1,13 +1,28 @@
-# 4 - Estacionamento com manobrista (modelo clássico)
+# Sistema de Estacionamento em C
 
-**Sugestões de Estruturas (Usar pelo menos 3):** pilha (vagas em linha – LIFO), fila (espera externa),
-lista encadeada (cadastro de veículos/assinantes), busca + ordenação para relatórios.
+Este projeto implementa um **sistema de gerenciamento de estacionamento** em linguagem **C**, utilizando as estruturas de dados **pilha, fila e lista encadeada**.  
+O objetivo é simular o funcionamento de um estacionamento com vagas limitadas, controlando a entrada, saída e espera de veículos.
 
-**Descrição:** Simule estacionamento onde carros à frente precisam sair para liberar outro.
+---
 
-### Funcionalidades:
-    - Entrada: se há vaga, empilha; senão, vai para fila de espera.
-    - Saída: desempilhar carros até achar o alvo; contabilizar manobras.
-    - Cadastro de veículos/assinantes (lista simples).
-    - Buscar placa; ordenar recibos por tempo de permanência ou valor.
-    - Relatórios: ocupação, top 5 permanências, total de manobras.
+## Estruturas Utilizadas
+- **Pilha (Estacionamento)** → armazena os carros estacionados, simulando a ordem de entrada/saída (LIFO).  
+- **Fila (Espera)** → guarda os carros que aguardam vaga disponível (FIFO).  
+- **Lista (Cadastros)** → mantém o histórico de veículos que passaram pelo sistema.  
+
+---
+
+## Funcionalidades
+- Estacionar carro → coloca o veículo na pilha ou, caso cheia, na fila de espera.  
+- Retirar carro → remove um carro específico, contabilizando manobras necessárias.  
+- Buscar carro → pesquisa por placa dentro do estacionamento.  
+- Listar → exibe carros no estacionamento, cadastrados ou em espera.  
+- Relatórios → mostram a ocupação, top 5 permanências e total de manobras.  
+
+---
+
+## Fluxo Resumido
+1. O carro chega → tenta estacionar.  
+2. Se há vaga → vai para o estacionamento.  
+3. Se não há vaga → entra na fila de espera.  
+4. Ao sair um carro → o primeiro da fila ocupa a vaga.  
